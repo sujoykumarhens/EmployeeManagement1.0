@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <link href="login.css" rel="stylesheet" />
+    <link href="CSS/login.css" rel="stylesheet" />
     <div class="container login">
         <div class="row">
             <div class="col-md-offset-4 col-md-5">

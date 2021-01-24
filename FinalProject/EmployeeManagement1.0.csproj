@@ -110,11 +110,11 @@
     <Content Include="DeptNew.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
-    <Content Include="InputForms.css" />
-    <Content Include="login.css" />
+    <Content Include="CSS\InputForms.css" />
+    <Content Include="CSS\login.css" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Site.Master" />
-    <Content Include="main.css" />
+    <Content Include="CSS\main.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
