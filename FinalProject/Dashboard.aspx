@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-3">
                 <p>
-                    <asp:Button ID="Button2" runat="server" Text="Manage" class="btn  btn-info btn-block btn-lg" /></p>
+                    <asp:Button ID="Button2" runat="server" Text="Manage " class="btn  btn-info btn-block btn-lg" /></p>
             </div>
             <div class="col-md-3">
                 <p>
