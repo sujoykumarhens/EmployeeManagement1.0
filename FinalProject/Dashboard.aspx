@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-3">
                 <p>
-                    <asp:Button ID="Button1" runat="server" Text="Manage Employees" class="btn  btn-info btn-block btn-lg" /></p>
+                    <asp:Button ID="Button1" runat="server" Text="Manage Employee" class="btn  btn-info btn-block btn-lg" /></p>
             </div>
             <div class="col-md-3">
                 <p>
