@@ -105,23 +105,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dashboard.css" />
+    <Content Include="DataTables\jquery.dataTables.min.css" />
+    <Content Include="DataTables\jquery.dataTables.min.js" />
+    <Content Include="DeptNew.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
+    <Content Include="InputForms.css" />
     <Content Include="login.css" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Site.Master" />
+    <Content Include="main.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Dashboard.aspx" />
-    <Content Include="WebForm4.aspx">
+    <Content Include="Department.aspx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="DeptNew.aspx.cs">
+      <DependentUpon>DeptNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeptNew.aspx.designer.cs">
+      <DependentUpon>DeptNew.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,13 +165,13 @@
     <Compile Include="Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm4.aspx.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="Department.aspx.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="WebForm4.aspx.designer.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="Department.aspx.designer.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>

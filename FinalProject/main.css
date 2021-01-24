@@ -1,0 +1,55 @@
+﻿body {
+    background-color: deepskyblue;
+}
+.footer{
+    text-align:center;
+    color:white;
+}
+/******************** Department page start ********************/
+.Department{
+    margin-top:7%;
+}
+.Department .deptlist{
+    background-color:whitesmoke;
+}
+.Department h1{
+    text-align:center;
+    font-size:5vw;
+    padding-bottom:20px;
+    font-weight:600;
+}
+.Department .addnew{
+    text-align:center;
+    padding-bottom:20px;
+}
+#myModal{
+    background-color:rgba(0,0,0,.8);
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 768px) {
+    .Department {
+        margin-top: 15%;
+    }
+}
+/******************** Department page end ********************/
+
+/******************** Dashboard page start ********************/
+.jumbotron {
+    box-shadow: 0px 2px gray;
+}
+
+@media screen and (min-width: 768px) {
+    .dashboard {
+        margin-top: 7%;
+    }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 768px) {
+    .dashboard {
+        margin-top: 15%;
+    }
+}
+
+/******************** Dashboard page end ********************/
