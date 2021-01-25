@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container dashboard">
         <div class="jumbotron">
-            <h1>Welcome Admin</h1>
+            <h1>Welcome Admins</h1>
             <p class="lead">Manage anything from here. Select one to manage.</p>
 
             <p>
