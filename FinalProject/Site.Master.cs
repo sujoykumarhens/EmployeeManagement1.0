@@ -18,7 +18,7 @@ namespace FinalProject
                 { 
                     LinkButton3.Visible = true; //login button
                     LinkButton1.Visible = false; //hello user button
-                    LinkButton2.Visible = false; //logout button
+                    LinkButton2.Visible = false; //logout button                    
                 }
                 else if (Session["role"].Equals("admin"))
                 {

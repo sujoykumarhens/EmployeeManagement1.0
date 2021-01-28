@@ -16,7 +16,11 @@ namespace FinalProject
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //This is to redirect the page if the user is not logged in
+            if (!string.IsNullOrEmpty((string)Session["role"]))
+            {
+                Response.Redirect("Dashboard.aspx");
+            }            
         }
 
         protected void Submit_Click(object sender, EventArgs e)
@@ -24,6 +28,7 @@ namespace FinalProject
             try
             {
                 SqlConnection con = new SqlConnection(strcon);
+               
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();

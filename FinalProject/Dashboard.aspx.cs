@@ -11,6 +11,11 @@ namespace FinalProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //This is to redirect the page if the user is not logged in
+            if (string.IsNullOrEmpty((string)Session["role"]))
+            {
+                Response.Redirect("Default.aspx");
+            }
 
         }
 
