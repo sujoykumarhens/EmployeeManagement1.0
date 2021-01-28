@@ -35,11 +35,11 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <asp:LinkButton CssClass="nav-link" runat="server" Visible="False">Hello</asp:LinkButton></li>
+                                <asp:LinkButton ID="LinkButton1" CssClass="nav-link" runat="server" Visible="False">Hello</asp:LinkButton></li>
                             <li>
-                                <asp:LinkButton CssClass="nav-link" runat="server" Text="Log out" Visible="False">Logout</asp:LinkButton></li>
+                                <asp:LinkButton ID="LinkButton2" CssClass="nav-link" runat="server" Text="Log out" Visible="False" OnClick="LinkButton2_Click1">Logout</asp:LinkButton></li>
                             <li>
-                                <asp:LinkButton CssClass="nav-link" runat="server" href="~/"><i class="glyphicon glyphicon-log-in"></i>  Login</asp:LinkButton></li>
+                                <asp:LinkButton ID="LinkButton3" CssClass="nav-link" runat="server" OnClick="LinkButton3_Click"><i class="glyphicon glyphicon-log-in"></i> Login</asp:LinkButton></li>
                         </ul>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
         <!--Footer of the page-->
         <div class="footer">
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> -Developed by Group A</p>
+                <p>&copy;  <%: DateTime.Now.Year %> -Developed by Group A</p>
             </footer>
         </div>
 

@@ -16,7 +16,10 @@ namespace FinalProject
 
         protected void Logout_Click(object sender, EventArgs e)
         {
-            
+            Session["username"] = "";
+            Session["fullname"] = "";
+            Session["role"] = "";
+            Response.Redirect("Default.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -38,5 +41,6 @@ namespace FinalProject
         {
             Response.Redirect("");
         }
+
     }
 }

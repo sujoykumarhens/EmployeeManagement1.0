@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace FinalProject
 {
     public partial class WebForm3 : System.Web.UI.Page
@@ -33,17 +34,21 @@ namespace FinalProject
                 {
                     while (dr.Read())
                     {
-                        Response.Write("<script>alert('" + dr.GetValue(0 ).ToString() + "');</script>");                        
+                        Response.Write("<script>alert('" + dr.GetValue(0).ToString() + "');</script>");
+                        Session["username"] = dr.GetValue(0).ToString();
+                        Session["fullname"]=dr.GetValue(2).ToString();
+                        Session["role"] = "admin";
                     }
+                    Response.Redirect("Dashboard.aspx");
                 }
                 else
                 {
                     Response.Write("<script>alert('Invalid user');</script>");
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                Response.Write("<script>alert('" +ex.Message()+ "');</script>");
+                Response.Write("<script>alert('Sorry, some error occured!');</script>");
             }
         }
     }
