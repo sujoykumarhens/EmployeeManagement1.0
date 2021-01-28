@@ -35,9 +35,9 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <asp:LinkButton CssClass="nav-link" runat="server">Hello</asp:LinkButton></li>
+                                <asp:LinkButton CssClass="nav-link" runat="server" Visible="False">Hello</asp:LinkButton></li>
                             <li>
-                                <asp:LinkButton CssClass="nav-link" runat="server">Logout</asp:LinkButton></li>
+                                <asp:LinkButton CssClass="nav-link" runat="server" Text="Log out" Visible="False">Logout</asp:LinkButton></li>
                             <li>
                                 <asp:LinkButton CssClass="nav-link" runat="server" href="~/"><i class="glyphicon glyphicon-log-in"></i>  Login</asp:LinkButton></li>
                         </ul>

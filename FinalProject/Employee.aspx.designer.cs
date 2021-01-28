@@ -11,34 +11,34 @@ namespace FinalProject
 {
 
 
-    public partial class WebForm3
+    public partial class Employee
     {
 
         /// <summary>
-        /// username control.
+        /// Panl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
+        protected global::System.Web.UI.WebControls.Panel Panl1;
 
         /// <summary>
-        /// password control.
+        /// irm1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
+        protected global::System.Web.UI.HtmlControls.HtmlIframe irm1;
 
         /// <summary>
-        /// Submit control.
+        /// EmployeeInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Submit;
+        protected global::System.Web.UI.WebControls.GridView EmployeeInfo;
     }
 }

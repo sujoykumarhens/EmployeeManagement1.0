@@ -108,6 +108,8 @@
     <Content Include="DataTables\jquery.dataTables.min.css" />
     <Content Include="DataTables\jquery.dataTables.min.js" />
     <Content Include="DeptNew.aspx" />
+    <Content Include="Employee.aspx" />
+    <Content Include="EmployeeNew.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
     <Content Include="CSS\InputForms.css" />
@@ -115,6 +117,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Site.Master" />
     <Content Include="CSS\main.css" />
+    <Content Include="Vaccency.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -133,6 +136,20 @@
     <Compile Include="DeptNew.aspx.designer.cs">
       <DependentUpon>DeptNew.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Employee.aspx.cs">
+      <DependentUpon>Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee.aspx.designer.cs">
+      <DependentUpon>Employee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeNew.aspx.cs">
+      <DependentUpon>EmployeeNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeNew.aspx.designer.cs">
+      <DependentUpon>EmployeeNew.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,6 +160,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vaccency.aspx.cs">
+      <DependentUpon>Vaccency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vaccency.aspx.designer.cs">
+      <DependentUpon>Vaccency.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

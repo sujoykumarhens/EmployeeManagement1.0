@@ -12,7 +12,7 @@
                     <asp:TextBox ID="password" runat="server" Class="password" placeholder="password" TextMode="password"></asp:TextBox>
                     <div class="wrapper">
                         <span class="group-btn">
-                            <asp:Button ID="submit" class="btn btn-lg btn-info btn-block submit" runat="server" Text="login" />
+                            <asp:Button ID="Submit" class="btn btn-lg btn-info btn-block submit" runat="server" Text="login" OnClick="Submit_Click" />
                         </span>
                     </div>
                 </div>
