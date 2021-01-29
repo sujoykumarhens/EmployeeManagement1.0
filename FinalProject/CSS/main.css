@@ -1,42 +1,41 @@
 ﻿body {
-    background-color: deepskyblue;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
 }
+
 .footer{
     text-align:center;
     color:white;
 }
-/******************** Department page start ********************/
-.Department{
-    margin-top:7%;
-}
-.Department .deptlist{
-    background-color:whitesmoke;
-}
-.Department h1{
-    text-align:center;
-    font-size:5vw;
-    padding-bottom:20px;
-    font-weight:600;
-}
-.Department .addnew{
-    text-align:center;
-    padding-bottom:20px;
-}
-#myModal{
-    background-color:rgba(0,0,0,.8);
+
+h2 {
+    text-align: center;
+    font-size: 5vw;
+    padding-bottom: 20px;
+    font-weight: 600;
+    color: whitesmoke;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (max-width: 768px) {
-    .Department {
-        margin-top: 15%;
-    }
+.AllDataList {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 0px 10px black;
 }
-/******************** Department page end ********************/
+
+.Capitalize {
+    text-transform: capitalize;
+}
+
+.glyphicon {
+    padding-left: 20px;
+    padding-right:5px;
+    font-size: 20px;
+    color: #6a11cb;
+}
 
 /******************** Dashboard page start ********************/
 .jumbotron {
-    box-shadow: 0px 2px gray;
+    box-shadow: 0px 6px rgba(0,0,0,.8);
+    background-color: white;
 }
 
 @media screen and (min-width: 768px) {
@@ -53,3 +52,38 @@
 }
 
 /******************** Dashboard page end ********************/
+
+/******************** Department page start ********************/
+.Department{
+    margin-top:7%;
+}
+
+.Department h1{
+    text-align:center;
+    font-size:5vw;
+    padding-bottom:20px;
+    font-weight:600;
+    color:white;
+}
+
+.Department .addnew{
+    text-align:center;
+    padding-bottom:20px;
+}
+
+#myModal{
+    background-color:rgba(0,0,0,.8);
+}
+
+.table {
+    background-color: lightskyblue;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 768px) {
+    .Department {
+        margin-top: 15%;
+    }
+}
+/******************** Department page end ********************/
+

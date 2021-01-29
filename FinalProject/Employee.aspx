@@ -1,14 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Employee.aspx.cs" Inherits="FinalProject.Employee" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container Department">
         <div class="row">
-            <h1>Employees Information</h1>
-
+            <h2>Employees Information</h2>
             <!--modal area-->
             <!-- Trigger the modal with a button -->
-            <div class="addnewemployee">
+            <div class="addnew">
                 <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Add a new employee</button>
             </div>
             <hr />
@@ -29,16 +34,20 @@
                     </div>
                 </div>
             </div>
-
-
-            <!--Department list-->
-            <div class="EmployeetList">
-                <div class="container">
-                    <asp:GridView ID="EmployeeInfo" class="table table-striped table-hover table-responsive table-bordered" runat="server"></asp:GridView>
-                </div>
+            <!--Employee list-->
+            <div class="AllDataList container">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT [emp_id],[emp_name],[emp_designation],[dept_id] FROM [employee] ORDER BY [emp_id]" UpdateCommand="UPDATE [employee] SET [emp_name]=@emp_name, [dept_id]=@dept_id, [emp_designation]=@emp_designation WHERE [emp_id]=@emp_id" DeleteCommand="DELETE FROM [employee] WHERE [emp_id]=@emp_id"></asp:SqlDataSource>
+                <asp:GridView ID="EmployeeInfo" class="table table-striped table-hover table-responsive table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="SqlDataSource1">
+                    <Columns>
+                        <asp:BoundField DataField="emp_id" HeaderText="Employee ID" ReadOnly="True" SortExpression="emp_id" />
+                        <asp:BoundField DataField="emp_name" HeaderText="Employee Name" SortExpression="emp_name" />
+                        <asp:BoundField DataField="emp_designation" HeaderText="Designation" SortExpression="emp_designation" />
+                        <asp:BoundField DataField="dept_id" HeaderText="Department ID" SortExpression="dept_id" />
+                        <asp:CommandField ShowEditButton="true" HeaderText="Edit" EditText="<i aria-hidden='true' class='glyphicon glyphicon-pencil'  title='Edit'></i>" CancelText="<i aria-hidden='true' class='glyphicon glyphicon-remove' title='Cancel'></i>" UpdateText="<i aria-hidden='true' class='glyphicon glyphicon-floppy-disk' title='Update'></i>" />
+                        <asp:CommandField ShowDeleteButton="true" HeaderText="Delete" DeleteText="<i aria-hidden='true' class='glyphicon glyphicon-trash'  title='Delete'></i>" />
+                    </Columns>
+                </asp:GridView>
             </div>
-
         </div>
     </div>
-    
 </asp:Content>

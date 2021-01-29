@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="FinalProject.WebForm3" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="CSS/login.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <link href="CSS/login.css" rel="stylesheet" />
     <div class="container login">
         <div class="row">
             <div class="col-md-offset-4 col-md-5">

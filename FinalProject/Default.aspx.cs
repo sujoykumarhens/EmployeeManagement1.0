@@ -16,7 +16,7 @@ namespace FinalProject
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //This is to redirect the page if the user is not logged in
+            //This is to redirect the page if the user is logged in
             if (!string.IsNullOrEmpty((string)Session["role"]))
             {
                 Response.Redirect("Dashboard.aspx");

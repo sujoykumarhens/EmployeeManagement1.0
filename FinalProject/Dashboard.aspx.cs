@@ -16,6 +16,7 @@ namespace FinalProject
             {
                 Response.Redirect("Default.aspx");
             }
+            fullname.Text = Session["fullname"].ToString();
 
         }
 

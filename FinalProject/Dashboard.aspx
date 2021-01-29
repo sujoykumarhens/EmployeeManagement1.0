@@ -5,11 +5,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container dashboard">
         <div class="jumbotron">
-            <h1>Welcome </h1>
-            <p class="lead">Manage anything from here. Select one to manage.</p>
-
-            <p>
-                <asp:Button ID="Logout" runat="server" Text="Log out" class="btn btn-info btn-lg" OnClick="Logout_Click" /></p>
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1>Welcome <asp:Label ID="fullname" runat="server" CssClass="Capitalize"></asp:Label> !</h1>
+                    <p class="lead">Manage anything from here. Select one to manage.</p>
+                    <p><asp:Button ID="Logout" runat="server" Text="Log out" class="btn btn-info btn-lg" OnClick="Logout_Click" /></p>
+                </div>
+                <div class="col-sm-4">
+                    <img src="Image/admin.jpg" class="img-responsive" />
+                </div>
+            </div>
         </div>
 
         <div class="row">
