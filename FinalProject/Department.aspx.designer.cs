@@ -7,52 +7,56 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+namespace FinalProject
+{
 
 
-public partial class  {
+    public partial class WebForm4
+    {
 
-    /// <summary>
-    /// CloseModal control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-protected global::System.Web.UI.WebControls.Button CloseModal;
+        /// <summary>
+        /// CloseModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CloseModal;
 
-/// <summary>
-/// Panl1 control.
-/// </summary>
-/// <remarks>
-/// Auto-generated field.
-/// To modify move field declaration from designer file to code-behind file.
-/// </remarks>
-protected global::System.Web.UI.WebControls.Panel Panl1;
+        /// <summary>
+        /// Panl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panl1;
 
-/// <summary>
-/// irm1 control.
-/// </summary>
-/// <remarks>
-/// Auto-generated field.
-/// To modify move field declaration from designer file to code-behind file.
-/// </remarks>
-protected global::System.Web.UI.HtmlControls.HtmlIframe irm1;
+        /// <summary>
+        /// irm1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlIframe irm1;
 
-/// <summary>
-/// SqlDataSource1 control.
-/// </summary>
-/// <remarks>
-/// Auto-generated field.
-/// To modify move field declaration from designer file to code-behind file.
-/// </remarks>
-protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
-/// <summary>
-/// DeptInfo control.
-/// </summary>
-/// <remarks>
-/// Auto-generated field.
-/// To modify move field declaration from designer file to code-behind file.
-/// </remarks>
-protected global::System.Web.UI.WebControls.GridView DeptInfo;
+        /// <summary>
+        /// DeptInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView DeptInfo;
+    }
 }
