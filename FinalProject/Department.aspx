@@ -1,10 +1,5 @@
 ﻿<%@ Page Title="Department" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Department.aspx.cs" Inherits="FinalProject.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-        });
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container Department">
@@ -15,13 +10,12 @@
             <div class="addnew">
                 <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Add a new department</button>
             </div>
-            <hr />
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog modal-md">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <asp:Button ID="CloseModal" runat="server" class="close" data-dismiss="modal" Text="X" OnClick="CloseModal_Click" />
+                            <asp:Button ID="CloseModal" runat="server" class="close" data-dismiss="modal" Text="⛌" OnClick="CloseModal_Click" />
                             <h4 class="modal-title">Add Department</h4>
                         </div>
                         <div class="modal-body">

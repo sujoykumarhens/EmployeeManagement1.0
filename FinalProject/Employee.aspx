@@ -1,14 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Employee.aspx.cs" Inherits="FinalProject.Employee" %>
+﻿<%@ Page Title="Employee" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Employee.aspx.cs" Inherits="FinalProject.Employee" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-        });
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container Department">
+    <div class="container employee">
         <div class="row">
             <h2>Employees Information</h2>
             <!--modal area-->
@@ -16,8 +11,6 @@
             <div class="addnew">
                 <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Add a new employee</button>
             </div>
-            <hr />
-
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog modal-md">
@@ -37,7 +30,7 @@
             <!--Employee list-->
             <div class="AllDataList container">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT [emp_id],[emp_name],[emp_designation],[dept_id] FROM [employee] ORDER BY [emp_id]" UpdateCommand="UPDATE [employee] SET [emp_name]=@emp_name, [dept_id]=@dept_id, [emp_designation]=@emp_designation WHERE [emp_id]=@emp_id" DeleteCommand="DELETE FROM [employee] WHERE [emp_id]=@emp_id"></asp:SqlDataSource>
-                <asp:GridView ID="EmployeeInfo" class="table table-striped table-hover table-responsive table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="SqlDataSource1">
+                <asp:GridView ID="EmployeeInfo" class="table table-hover table-responsive table-bordered" runat="server" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:BoundField DataField="emp_id" HeaderText="Employee ID" ReadOnly="True" SortExpression="emp_id" />
                         <asp:BoundField DataField="emp_name" HeaderText="Employee Name" SortExpression="emp_name" />

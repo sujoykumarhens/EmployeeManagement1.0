@@ -115,6 +115,9 @@
     <Content Include="CSS\InputForms.css" />
     <Content Include="CSS\login.css" />
     <Content Include="Image\admin.jpg" />
+    <Content Include="Image\excel.svg" />
+    <Content Include="Quarter.aspx" />
+    <Content Include="Rent.aspx" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Site.Master" />
     <Content Include="CSS\main.css" />
@@ -155,6 +158,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quarter.aspx.cs">
+      <DependentUpon>Quarter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quarter.aspx.designer.cs">
+      <DependentUpon>Quarter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rent.aspx.cs">
+      <DependentUpon>Rent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rent.aspx.designer.cs">
+      <DependentUpon>Rent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

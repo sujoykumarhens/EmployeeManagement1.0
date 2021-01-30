@@ -40,12 +40,12 @@ namespace FinalProject
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("");
+            Response.Redirect("Quarter.aspx");
         }
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            Response.Redirect("");
+            Response.Redirect("Rent.aspx");
         }
 
     }

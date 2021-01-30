@@ -1,10 +1,50 @@
 ﻿body {
-    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    background: #8E2DE2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.navbar{
+    box-shadow:none;
+    background-color:rgba(255,255,255,.1);
+    border:none;
+    color:white;
+}
+.navbar-header a, .navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+    color:white;
+    border-color:white;
+    background-color:white;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:active {
+    background-color: rgba(255,255,255,.3);
+}
+
+.navbar ul li .nav-link {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.navbar ul li .nav-link:hover, .navbar-default .navbar-brand:hover {
+    color: lightgray;
+}
+
+.navbar-fixed-top.scrolled {
+    background-color: #000 !important;
+    transition: background-color 200ms linear;
 }
 
 .footer{
     text-align:center;
     color:white;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.5);
 }
 
 h2 {
@@ -18,20 +58,41 @@ h2 {
 .AllDataList {
     background-color: white;
     padding: 10px;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.6);
+    border-radius:5px;
 }
 
 .Capitalize {
     text-transform: capitalize;
 }
 
-.glyphicon {
-    padding-left: 20px;
-    padding-right:5px;
-    font-size: 20px;
-    color: #6a11cb;
+.addnew {
+    text-align: center;
+    padding-bottom: 20px;
 }
 
+#myModal {
+    background-color: rgba(0,0,0,.8);
+}
+
+.table .glyphicon {
+    padding-left: 20px;
+    padding-right:5px;
+    color: #6a11cb;
+
+}
+.table th{
+    background-color: #6a11cb;
+    color:white;
+}
+.Department, .quarter, .employee, .rent {
+    margin-top: 7%;
+}
+
+.close{
+    border:none;
+    background-color:transparent;
+}
 /******************** Dashboard page start ********************/
 .jumbotron {
     box-shadow: 0px 6px rgba(0,0,0,.8);
@@ -41,6 +102,7 @@ h2 {
 @media screen and (min-width: 768px) {
     .dashboard {
         margin-top: 7%;
+        padding-bottom: 5%;
     }
 }
 
@@ -54,36 +116,20 @@ h2 {
 /******************** Dashboard page end ********************/
 
 /******************** Department page start ********************/
-.Department{
-    margin-top:7%;
-}
-
-.Department h1{
-    text-align:center;
-    font-size:5vw;
-    padding-bottom:20px;
-    font-weight:600;
-    color:white;
-}
-
-.Department .addnew{
-    text-align:center;
-    padding-bottom:20px;
-}
-
-#myModal{
-    background-color:rgba(0,0,0,.8);
-}
-
-.table {
-    background-color: lightskyblue;
-}
-
 /* Responsive: Portrait tablets and up */
 @media screen and (max-width: 768px) {
-    .Department {
+    .Department, .quarter, .employee, .rent {
         margin-top: 15%;
     }
 }
 /******************** Department page end ********************/
 
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 768px) {
+    .navbar-collapse{
+        background-color:black;
+    }
+    .table, .table .glyphicon {
+        font-size: 1vw;
+    }
+}
