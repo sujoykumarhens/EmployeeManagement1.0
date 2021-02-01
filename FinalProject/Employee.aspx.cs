@@ -15,13 +15,13 @@ namespace FinalProject
             readonly string Strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             protected void Page_Load(object sender, EventArgs e)
             {
-                //This is to redirect the page if the user is not logged in
-                if (string.IsNullOrEmpty((string)Session["role"]))
-                {
-                  Response.Redirect("Default.aspx");
-                }
-                VaccencyList.DataBind();
-                EmployeeInfo.DataBind();
+            //This is to redirect the page if the user is not logged in
+            /*if (string.IsNullOrEmpty((string)Session["role"]))
+            {
+              Response.Redirect("Default.aspx");
+            }*/
+            VaccencyList.DataBind();
+            EmployeeInfo.DataBind();
             }
 
         protected void VaccencyList_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -74,12 +74,15 @@ namespace FinalProject
                 da.Fill(dt);
                 if (dt.Rows.Count >= 1)
                 {
+                    
                     return true;
                 }
                 else
                 {
+                    
                     return false;
                 }
+                
                 
             }
             catch (Exception ex)
@@ -105,21 +108,22 @@ namespace FinalProject
                 cmd.Parameters.AddWithValue("@emp_designation", Designation.Text.Trim());
                 cmd.Parameters.AddWithValue("@dept_id", DeptID.Text.Trim());
                 cmd.ExecuteNonQuery();
-
-                /*SqlCommand cmdd = new SqlCommand("SELECT vaccency from vaccency where dept_id='" + DeptID.Text.Trim() + "';", con);
-                SqlDataReader dta = cmdd.ExecuteReader();
-                while (dta.Read())
+          
+                SqlCommand cmdo = new SqlCommand("SELECT vaccency FROM vaccency where dept_id='" + DeptID.Text.Trim() + "';", con);
+                int temp = 0;
+                SqlDataReader readerw = cmdo.ExecuteReader();
+                while (readerw.Read())
                 {
-                    vaccency = (int)dta.GetValue(0);
+                    temp = Convert.ToInt32(readerw["vaccency"]);
                 }
-                vaccency--;*/
-                SqlCommand cmdu = new SqlCommand("Update vaccency set vaccency='9'where dept_id='" + DeptID.Text.Trim() + "';", con);
+                temp=temp-1;
+                SqlCommand cmdu = new SqlCommand("Update vaccency set vaccency='"+temp+"' where dept_id='" + DeptID.Text.Trim() + "';", con);
                 cmdu.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Department added Successfully');</script>");
-                ClearForm();
+                Response.Write("<script>alert ('Employee added Successfully');</script>");
                 EmployeeInfo.DataBind();
                 VaccencyList.DataBind();
+                ClearForm();
             }
             catch (Exception ex)
             {
@@ -128,7 +132,7 @@ namespace FinalProject
         }
 
         //clear the form
-        void ClearForm()
+void ClearForm()
         {
             DeptID.Text = "";
             EmpID.Text = "";
@@ -140,24 +144,3 @@ namespace FinalProject
 
 
 
-/*
- SqlConnection con = new SqlConnection(Strcon);
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                SqlCommand cmd = new SqlCommand("SELECT vaccency from vaccency where dept_id='" + v + "';", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                if (dt.Rows.Count >= 1)
-                {
-                    Response.Write("<script>alert('v');</script>");
-                }
-                else
-                {
-                    Response.Write("<script>alert('no.');</script>");
-                }
-                con.Close();
-*/
