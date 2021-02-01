@@ -8,8 +8,41 @@
             <!--modal area-->
             <!-- Trigger the modal with a button -->
             <div class="addnew">
-                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Allocate a quarter</button>
+                <a href="#demo" class="btn btn-default btn-lg" data-toggle="collapse">Allocation</a>
             </div>
+           
+<div id="demo" class="collapse">
+    
+ <div class="container">
+    <div class="form-group row">
+        <div class="col-xs-4">
+         <h3><span class="label label-primary"><label for="ex3" >Employee ID</label></span></h3>
+            <input class="form-control" id="ex3" type="text">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-xs-4">
+         <h3><span class="label label-primary"><label for="ex3" >Quarter Name</label></span></h3>
+            <input class="form-control" id="ex3" type="text">
+        </div>
+    </div>
+
+     <div class="form-group row">
+        <div class="col-xs-4">
+         <h3><span class="label label-primary"><label for="ex3" >Quarter ID</label></span></h3>
+            <input class="form-control" id="ex3" type="text">
+        </div>
+    </div>
+
+         <div class="col-md-3">
+                <p>
+                    <Button Type="button" class="btn btn-default btn-block">Submit</button></p>
+            </div>
+
+</div>
+
+</div>
             <!-- Modal
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog modal-md">
