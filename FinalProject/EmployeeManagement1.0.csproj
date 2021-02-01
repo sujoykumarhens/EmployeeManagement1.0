@@ -118,7 +118,6 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Site.Master" />
     <Content Include="CSS\main.css" />
-    <Content Include="Vaccency.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -161,13 +160,6 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Vaccency.aspx.cs">
-      <DependentUpon>Vaccency.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vaccency.aspx.designer.cs">
-      <DependentUpon>Vaccency.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

@@ -51,13 +51,13 @@ namespace FinalProject
         protected global::System.Web.UI.WebControls.TextBox QuarterID;
 
         /// <summary>
-        /// QuarterNAme control.
+        /// QuarterName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox QuarterNAme;
+        protected global::System.Web.UI.WebControls.TextBox QuarterName;
 
         /// <summary>
         /// SqlDataSource1 control.

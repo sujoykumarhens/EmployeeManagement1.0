@@ -8,10 +8,11 @@
             <!--modal area-->
             <!-- Trigger the modal with a button -->
             <div class="addnew">
-                 <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal1">Allocate quarter</button>
+                 <a href="#demo" class="btn btn-default btn-lg" data-toggle="collapse">Allocation</a>
+                 <!--<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal1">Allocate quarter</button>-->
             </div>
 
-            <!-- Modal-->
+            <!-- Modal
             <div class="modal fade" id="myModal1" role="dialog">
                 <div class="modal-dialog modal-md">
                     <div class="modal-content">
@@ -20,39 +21,40 @@
                             <h4 class="modal-title">Quarter Allocation</h4>
                         </div>
                         <div class="modal-body">
-                            <asp:Panel ID="Panl1" runat="server" align="center">
-
+                            <asp:Panel ID="Panl1" runat="server" align="center">-->
+                                <div id="demo" class="collapse">
 
                                 <div class="form-group">
-                                    <asp:TextBox ID="EmpID" class="form-control inputs" placeholder="Employee ID" runat="server" TextMode="SingleLine" OnTextChanged="EmpID_TextChanged"></asp:TextBox>
+                                    <asp:TextBox ID="EmpID" class="form-control inputs" placeholder="Employee ID" runat="server" TextMode="SingleLine" AutoPostBack="True" OnTextChanged="EmpID_TextChanged"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="EmpName" Enabled="false" class="form-control inputs" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                    <asp:TextBox ID="EmpName"  class="form-control inputs" Enabled="false" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="QuarterID" class="form-control inputs" placeholder="Quarter ID" runat="server"  OnTextChanged="QuarterID_TextChanged" TextMode="SingleLine"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="QuarterNAme" Enabled="false" class="form-control inputs" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                    <asp:TextBox ID="QuarterName" Enabled="false" class="form-control inputs" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>
                                 </div>
+                                    </div>
 
-
+<!--
                             </asp:Panel>
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div> -->
 
 
             <!--Employee list-->
             <div class="AllDataList container">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT [quarter].[quarter_id], [quarter].[quarter_name], [employee].[emp_id], [employee].[emp_name] FROM [quarter] INNER JOIN [employee] ON [quarter].[emp_id]=[employee].[emp_id];"></asp:SqlDataSource>
-                <asp:GridView ID="QuarterInfo" class="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="SqlDataSource1">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT quarterlist.quarter_id, quarterlist.quarter_name, employee.emp_name, employee.emp_id FROM quarterlist INNER JOIN allocatedquarter ON quarterlist.quarter_id = allocatedquarter.quarter_id INNER JOIN employee ON allocatedquarter.emp_id = employee.emp_id"></asp:SqlDataSource>
+                <asp:GridView ID="QuarterInfo" class="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
                     <Columns>
-                        <asp:BoundField DataField="emp_id" HeaderText="Employee ID" ReadOnly="True" SortExpression="emp_id" />
-                        <asp:BoundField DataField="emp_name" HeaderText="Employee Name" SortExpression="emp_name" />
-                        <asp:BoundField DataField="quarter_name" HeaderText="Quarter Name" SortExpression="quarter_name" />
                         <asp:BoundField DataField="quarter_id" HeaderText="Quarter ID" SortExpression="quarter_id" />
+                        <asp:BoundField DataField="quarter_name" HeaderText="Quarter Name" SortExpression="quarter_name" />
+                        <asp:BoundField DataField="emp_id" HeaderText="Employee ID" SortExpression="emp_id" />
+                        <asp:BoundField DataField="emp_name" HeaderText="Employee Name" SortExpression="emp_name" />
                     </Columns>
                 </asp:GridView>
             </div>

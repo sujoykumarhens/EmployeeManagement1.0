@@ -28,7 +28,7 @@
             </div> -->
             <!--Employee list-->
             <div class="AllDataList container">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT q.[quarter_name], e.[emp_id], e.[emp_name],r.[rent_amount],r.[rent_status],r.[rent_paid_date] FROM [quarter] q, [employee] e, [rent] r WHERE e.[emp_id]=q.[emp_id] AND e.[emp_id]=r.[emp_id]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT q.[quarter_name], e.[emp_id], e.[emp_name],r.[rent_amount],r.[rent_status],r.[rent_paid_date] FROM [quarterlist] q, [employee] e, [rent] r WHERE e.[emp_id]=q.[emp_id] AND e.[emp_id]=r.[emp_id]"></asp:SqlDataSource>
                 <asp:GridView ID="RentGrid" class="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:BoundField DataField="emp_id" HeaderText="Employee ID" ReadOnly="True" SortExpression="emp_id" />

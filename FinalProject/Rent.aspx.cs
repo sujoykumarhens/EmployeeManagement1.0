@@ -24,7 +24,7 @@ namespace FinalProject
                 string CS = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(CS))
                 {
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT q.[quarter_name], e.[emp_id], e.[emp_name],r.[rent_amount],r.[rent_status],r.[rent_paid_date] FROM [quarter] q, [employee] e, [rent] r WHERE e.[emp_id]=q.[emp_id] AND e.[emp_id]=r.[emp_id]", con);
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT q.[quarter_name], e.[emp_id], e.[emp_name],r.[rent_amount],r.[rent_status],r.[rent_paid_date] FROM [quarterlist] q, [employee] e, [rent] r WHERE e.[emp_id]=q.[emp_id] AND e.[emp_id]=r.[emp_id]", con);
                     DataSet ds = new DataSet();
                     da.Fill(ds);
                     RentGrid.DataBind();
