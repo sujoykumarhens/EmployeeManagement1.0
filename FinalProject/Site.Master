@@ -15,7 +15,7 @@
     <link href="CSS/main.css" rel="stylesheet" />
         <script>
             $(document).ready(function () {
-            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+                $(".table").not('.except').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
             });
             $(function () {
                 $(document).scroll(function () {

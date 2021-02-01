@@ -75,6 +75,25 @@ h2 {
     background-color: rgba(0,0,0,.8);
 }
 
+.form-group .inputs {
+    padding: 20px;
+    margin: 2px 0px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.form-group .inputs:focus {
+    background: #e5e5e5;
+    outline: none;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+
 .table .glyphicon {
     padding-left: 20px;
     padding-right:5px;
@@ -133,3 +152,4 @@ h2 {
         font-size: 1vw;
     }
 }
+

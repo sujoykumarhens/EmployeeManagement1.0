@@ -107,12 +107,9 @@
   <ItemGroup>
     <Content Include="DataTables\jquery.dataTables.min.css" />
     <Content Include="DataTables\jquery.dataTables.min.js" />
-    <Content Include="DeptNew.aspx" />
     <Content Include="Employee.aspx" />
-    <Content Include="EmployeeNew.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
-    <Content Include="CSS\InputForms.css" />
     <Content Include="CSS\login.css" />
     <Content Include="Image\admin.jpg" />
     <Content Include="Image\excel.svg" />
@@ -133,26 +130,12 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="DeptNew.aspx.cs">
-      <DependentUpon>DeptNew.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DeptNew.aspx.designer.cs">
-      <DependentUpon>DeptNew.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Employee.aspx.cs">
       <DependentUpon>Employee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Employee.aspx.designer.cs">
       <DependentUpon>Employee.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeNew.aspx.cs">
-      <DependentUpon>EmployeeNew.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EmployeeNew.aspx.designer.cs">
-      <DependentUpon>EmployeeNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
