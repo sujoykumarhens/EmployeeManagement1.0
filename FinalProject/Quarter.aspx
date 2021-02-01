@@ -8,57 +8,42 @@
             <!--modal area-->
             <!-- Trigger the modal with a button -->
             <div class="addnew">
-                <a href="#demo" class="btn btn-default btn-lg" data-toggle="collapse">Allocation</a>
-            </div>
-           
-<div id="demo" class="collapse">
-    
- <div class="container">
-    <div class="form-group row">
-        <div class="col-xs-4">
-         <h3><span class="label label-primary"><label for="ex3" >Employee ID</label></span></h3>
-            <input class="form-control" id="ex3" type="text">
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <div class="col-xs-4">
-         <h3><span class="label label-primary"><label for="ex3" >Quarter Name</label></span></h3>
-            <input class="form-control" id="ex3" type="text">
-        </div>
-    </div>
-
-     <div class="form-group row">
-        <div class="col-xs-4">
-         <h3><span class="label label-primary"><label for="ex3" >Quarter ID</label></span></h3>
-            <input class="form-control" id="ex3" type="text">
-        </div>
-    </div>
-
-         <div class="col-md-3">
-                <p>
-                    <Button Type="button" class="btn btn-default btn-block">Submit</button></p>
+                 <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal1">Allocate quarter</button>
             </div>
 
-</div>
-
-</div>
-            <!-- Modal
-            <div class="modal fade" id="myModal" role="dialog">
+            <!-- Modal-->
+            <div class="modal fade" id="myModal1" role="dialog">
                 <div class="modal-dialog modal-md">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Vaccency</h4>
+                            <h4 class="modal-title">Quarter Allocation</h4>
                         </div>
                         <div class="modal-body">
                             <asp:Panel ID="Panl1" runat="server" align="center">
-                                <iframe style="width: 100%; height: 400px; border: none;" id="irm1" src="Vaccency.aspx" runat="server"></iframe>
+
+
+                                <div class="form-group">
+                                    <asp:TextBox ID="EmpID" class="form-control inputs" placeholder="Employee ID" runat="server" TextMode="SingleLine" OnTextChanged="EmpID_TextChanged"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <asp:TextBox ID="EmpName" Enabled="false" class="form-control inputs" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <asp:TextBox ID="QuarterID" class="form-control inputs" placeholder="Quarter ID" runat="server"  OnTextChanged="QuarterID_TextChanged" TextMode="SingleLine"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <asp:TextBox ID="QuarterNAme" Enabled="false" class="form-control inputs" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                </div>
+
+
                             </asp:Panel>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div> 
+
+
             <!--Employee list-->
             <div class="AllDataList container">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT [quarter].[quarter_id], [quarter].[quarter_name], [employee].[emp_id], [employee].[emp_name] FROM [quarter] INNER JOIN [employee] ON [quarter].[emp_id]=[employee].[emp_id];"></asp:SqlDataSource>

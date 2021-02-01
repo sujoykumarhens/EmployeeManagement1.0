@@ -24,13 +24,40 @@ namespace FinalProject
         protected global::System.Web.UI.WebControls.Panel Panl1;
 
         /// <summary>
-        /// irm1 control.
+        /// EmpID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlIframe irm1;
+        protected global::System.Web.UI.WebControls.TextBox EmpID;
+
+        /// <summary>
+        /// EmpName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EmpName;
+
+        /// <summary>
+        /// QuarterID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox QuarterID;
+
+        /// <summary>
+        /// QuarterNAme control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox QuarterNAme;
 
         /// <summary>
         /// SqlDataSource1 control.
