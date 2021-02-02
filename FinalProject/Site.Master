@@ -7,6 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Employee Management</title>
+    <link rel="shortcut icon" href="Image/favicon.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="DataTables/jquery.dataTables.min.js"></script>
@@ -23,6 +24,35 @@
                     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
                 });
             });
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours(); // 0 - 23
+                var m = date.getMinutes(); // 0 - 59
+                var s = date.getSeconds(); // 0 - 59
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+
+                h = (h < 10) ? "0" + h : h;
+                m = (m < 10) ? "0" + m : m;
+                s = (s < 10) ? "0" + s : s;
+
+                var time = h + ":" + m + ":" + s + " " + session;
+                document.getElementById("MyClockDisplay").innerText = time;
+                document.getElementById("MyClockDisplay").textContent = time;
+
+                setTimeout(showTime, 1000);
+
+            }
+
+            showTime();
         </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -46,11 +76,16 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <asp:LinkButton ID="LinkButton1" CssClass="nav-link Capitalize" runat="server" Visible="False"></asp:LinkButton></li>
+                                <asp:LinkButton ID="LinkButton1" CssClass="nav-link Capitalize" runat="server" Visible="False"></asp:LinkButton>
+
+                            </li>
                             <li>
-                                <asp:LinkButton ID="LinkButton2" CssClass="nav-link" runat="server" Visible="False" OnClick="LinkButton2_Click1" ><i class="glyphicon glyphicon-log-out"></i> Logout</asp:LinkButton></li>
+                                <asp:LinkButton ID="LinkButton2" CssClass="nav-link" runat="server" Visible="False" OnClick="LinkButton2_Click1" ><i class="glyphicon glyphicon-log-out"></i> Logout</asp:LinkButton>
+
+                            </li>
                             <li>
-                                <asp:LinkButton ID="LinkButton3" CssClass="nav-link" runat="server" OnClick="LinkButton3_Click"><i class="glyphicon glyphicon-log-in"></i> Login</asp:LinkButton></li>
+                                <asp:LinkButton ID="LinkButton3" CssClass="nav-link" runat="server" OnClick="LinkButton3_Click"><i class="glyphicon glyphicon-log-in"></i> Login</asp:LinkButton>
+                            </li>
                         </ul>
                     </div>
                 </div>

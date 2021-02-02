@@ -113,6 +113,7 @@
     <Content Include="CSS\login.css" />
     <Content Include="Image\admin.jpg" />
     <Content Include="Image\excel.svg" />
+    <Content Include="Image\favicon.ico" />
     <Content Include="Quarter.aspx" />
     <Content Include="Rent.aspx" />
     <Content Include="Scripts\modernizr-2.8.3.js" />

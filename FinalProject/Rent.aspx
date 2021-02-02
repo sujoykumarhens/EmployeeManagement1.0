@@ -10,7 +10,6 @@
             <div class="addnew">
                 <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">New Payment</button>
             </div>
-            <!-- Modal
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog modal-md">
                     <div class="modal-content">
@@ -20,15 +19,15 @@
                         </div>
                         <div class="modal-body">
                             <asp:Panel ID="Panl1" runat="server" align="center">
-                                <iframe style="width: 100%; height: 400px; border: none;" id="irm1" src="Vaccency.aspx" runat="server"></iframe>
+                                Code here
                             </asp:Panel>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <!--Employee list-->
             <div class="AllDataList container">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT q.[quarter_name], e.[emp_id], e.[emp_name],r.[rent_amount],r.[rent_status],r.[rent_paid_date] FROM [quarterlist] q, [employee] e, [rent] r WHERE e.[emp_id]=q.[emp_id] AND e.[emp_id]=r.[emp_id]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT q.quarter_name, e.emp_id, e.emp_name, r.rent_amount, r.rent_status, r.rent_paid_date FROM rent AS r INNER JOIN employee AS e ON r.emp_id = e.emp_id INNER JOIN allocatedquarter AS a ON e.emp_id = a.emp_id INNER JOIN quarterlist AS q ON a.quarter_id = q.quarter_id"></asp:SqlDataSource>
                 <asp:GridView ID="RentGrid" class="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:BoundField DataField="emp_id" HeaderText="Employee ID" ReadOnly="True" SortExpression="emp_id" />

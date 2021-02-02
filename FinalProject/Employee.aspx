@@ -47,7 +47,7 @@
                          <asp:Panel ID="Panl1" runat="server">
                              <div class="form-group">
                                  <label for="DeptID" style="color:white;" >Department ID </label>
-                        <asp:TextBox ID="DeptID" Enabled="false" class="form-control" runat="server" TextMode="SingleLine"></asp:TextBox>
+                        <asp:TextBox ID="DeptID" ReadOnly="true" Text="Department IDs" class="form-control" runat="server" TextMode="SingleLine"></asp:TextBox>
                     </div>
                      <div class="form-group">
                         <asp:TextBox ID="EmpID" class="form-control inputs" placeholder="Employee ID" runat="server" TextMode="SingleLine"></asp:TextBox>
@@ -68,7 +68,7 @@
 
             <!--Employee list-->
             <div class="AllDataList container">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT [emp_id],[emp_name],[emp_designation],[dept_id] FROM [employee] ORDER BY [emp_id]" UpdateCommand="UPDATE [employee] SET [emp_name]=@emp_name, [dept_id]=@dept_id, [emp_designation]=@emp_designation WHERE [emp_id]=@emp_id" DeleteCommand="DELETE FROM [employee] WHERE [emp_id]=@emp_id"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT [emp_id],[emp_name],[emp_designation],[dept_id] FROM [employee] ORDER BY [emp_id]" UpdateCommand="UPDATE [employee] SET [emp_name]=@emp_name, [dept_id]=@dept_id, [emp_designation]=@emp_designation WHERE [emp_id]=@emp_id" DeleteCommand="DELETE FROM [employee] WHERE [emp_id]=@emp_id;DELETE FROM [allocatedquarter] WHERE [emp_id]=@emp_id;allocatedquarter;"></asp:SqlDataSource>
                 <asp:GridView ID="EmployeeInfo" runat="server" CssClass="table except table-bordered table-hover" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:BoundField DataField="emp_id" HeaderText="Employee ID" ReadOnly="True" SortExpression="emp_id" />
