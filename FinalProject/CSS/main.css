@@ -94,6 +94,23 @@ h2 {
     box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
+.btn-primary, .btn-info {
+    background-color: rgba(0,0,0,.9);
+    border: 1px solid black;
+    color: lightgray;
+    transition: 0.5s;
+}
+.btn-primary:hover, .btn-info:hover{
+    background-color: rgba(0,0,0,.4);
+    transition: 0.5s;
+    border:1px solid black;
+}
+.options {
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    background-color: whitesmoke;
+}
 
 .table .glyphicon {
     padding-left: 20px;
@@ -171,6 +188,9 @@ h2 {
     }
     .table, .table .glyphicon {
         font-size: 1vw;
+    }
+    .options{
+        width:100%;
     }
 }
 

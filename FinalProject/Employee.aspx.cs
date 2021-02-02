@@ -18,7 +18,7 @@ namespace FinalProject
             //This is to redirect the page if the user is not logged in
             if (string.IsNullOrEmpty((string)Session["role"]))
             {
-              Response.Redirect("Default.aspx");
+              Response.Redirect("~/");
             }
             VaccencyList.DataBind();
             EmployeeInfo.DataBind();

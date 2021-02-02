@@ -15,6 +15,42 @@ namespace FinalProject
     {
 
         /// <summary>
+        /// CloseModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CloseModal;
+
+        /// <summary>
+        /// NewQuarterID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NewQuarterID;
+
+        /// <summary>
+        /// NewQuarterName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NewQuarterName;
+
+        /// <summary>
+        /// QuarterSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button QuarterSave;
+
+        /// <summary>
         /// EmpID control.
         /// </summary>
         /// <remarks>

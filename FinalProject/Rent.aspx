@@ -5,26 +5,35 @@
     <div class="container rent">
         <div class="row">
             <h2>Rents Information</h2>
-            <!--modal area-->
-            <!-- Trigger the modal with a button -->
-            <div class="addnew">
-                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">New Payment</button>
-            </div>
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog modal-md">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Vaccency</h4>
+            
+            <div class="panel rent-panel">
+                <div class="panel-heading">Pay rent</div>
+                <div class="panel-body">
+                    <div class="form-inline">
+
+                        <div class="form-group">
+                            <asp:TextBox ID="EmpID" class="form-control inputs" placeholder="Employee ID" runat="server" AutoPostBack="true" TextMode="SingleLine" OnTextChanged="EmpID_TextChanged"></asp:TextBox>
                         </div>
-                        <div class="modal-body">
-                            <asp:Panel ID="Panl1" runat="server" align="center">
-                                Code here
-                            </asp:Panel>
+                        <div class="form-group">
+                            <asp:TextBox ID="EmpName" class="form-control inputs" ReadOnly="true" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>
                         </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="RentAmount" class="form-control inputs" placeholder="Rent amount" runat="server" TextMode="Number"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="Month" class="form-control inputs" placeholder="Rent month" runat="server" TextMode="Date"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:DropDownList ID="RentStatus" CssClass="options" runat="server">
+                                <asp:ListItem Value="">Payment status</asp:ListItem>
+                                <asp:ListItem>Due</asp:ListItem>
+                                <asp:ListItem>Paid</asp:ListItem>
+                            </asp:DropDownList>
+                        </div><br /><br />
+                        <asp:Button ID="Submit" class="btn btn-primary btn-block boton" runat="server" OnClick="Submit_Click" Text="Submit" />
                     </div>
                 </div>
-            </div>
+            </div><br />
             <!--Employee list-->
             <div class="AllDataList container">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT q.quarter_name, e.emp_id, e.emp_name, r.rent_amount, r.rent_status, r.rent_paid_date FROM rent AS r INNER JOIN employee AS e ON r.emp_id = e.emp_id INNER JOIN allocatedquarter AS a ON e.emp_id = a.emp_id INNER JOIN quarterlist AS q ON a.quarter_id = q.quarter_id"></asp:SqlDataSource>

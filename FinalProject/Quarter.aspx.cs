@@ -17,7 +17,7 @@ namespace FinalProject
             //This is to redirect the page if the user is not logged in
             if (string.IsNullOrEmpty((string)Session["role"]))
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("~/");
             }
             QuarterInfo.DataBind();
         }
@@ -158,6 +158,43 @@ namespace FinalProject
             EmpName.Text = "";
             QuarterID.Text = "";
             QuarterName.Text = "";
+        }
+        //Adding new quarter
+        protected void QuarterSave_Clicked(object sender,EventArgs e)
+        {
+            try
+            {
+                SqlConnection con5 = new SqlConnection(Strcon);
+                if (con5.State == ConnectionState.Closed)
+                {
+                    con5.Open();
+                }
+                SqlCommand cmd5 = new SqlCommand("SELECT * from quarterlist where quarter_id='" + NewQuarterID.Text.Trim() + "' OR quarter_name='" + NewQuarterName.Text.Trim() + "';", con5);
+                SqlDataAdapter da5 = new SqlDataAdapter(cmd5);
+                DataTable dt5 = new DataTable();
+                da5.Fill(dt5);
+                if (dt5.Rows.Count >= 1)
+                {
+                    Response.Write("<script>alert('Quarter exixts. Try another.');</script>");
+                    NewQuarterID.Text = "";
+                    NewQuarterName.Text = "";
+                }
+                else
+                {
+                    SqlCommand cmd6 = new SqlCommand("INSERT INTO quarterlist (quarter_id,quarter_name) values (@quarter_id,@quarter_name)", con5);
+                    cmd6.Parameters.AddWithValue("@quarter_id", NewQuarterID.Text.Trim());
+                    cmd6.Parameters.AddWithValue("@quarter_name", NewQuarterName.Text.Trim());
+                    cmd6.ExecuteNonQuery();
+                    NewQuarterID.Text = "";
+                    NewQuarterName.Text = "";
+                    Response.Write("<script>alert('"+NewQuarterName.Text.Trim()+" Successfully registered.');</script>");
+                }
+                con5.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
         }
     }
 }

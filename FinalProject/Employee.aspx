@@ -22,7 +22,7 @@
                 <div class="modal-dialog modal-md">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <asp:Button ID="CloseModal" runat="server" class="close" data-dismiss="modal" Text="⛌"  />
                             <h4 class="modal-title">Vaccency</h4>
                         </div>
                         <div class="modal-body">
@@ -32,7 +32,7 @@
                                     <asp:BoundField DataField="dept_id" HeaderText="Department ID" SortExpression="dept_id" />
                                     <asp:BoundField DataField="dept_name" HeaderText="Department Name" SortExpression="dept_name" />
                                     <asp:BoundField DataField="vaccency" HeaderText="Vaccency" SortExpression="vaccency" />
-                                    <asp:ButtonField Visible="true" ButtonType="Button" CommandName="apply" Text="Button" />
+                                    <asp:ButtonField Visible="true" ButtonType="Button" CommandName="apply" Text="Apply" />
                                 </Columns>
                             </asp:GridView>
                             
