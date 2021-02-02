@@ -68,7 +68,7 @@
 
             <!--Employee list-->
             <div class="AllDataList container">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT [emp_id],[emp_name],[emp_designation],[dept_id] FROM [employee] ORDER BY [emp_id]" UpdateCommand="UPDATE [employee] SET [emp_name]=@emp_name, [dept_id]=@dept_id, [emp_designation]=@emp_designation WHERE [emp_id]=@emp_id" DeleteCommand="DELETE FROM [employee] WHERE [emp_id]=@emp_id;DELETE FROM [allocatedquarter] WHERE [emp_id]=@emp_id;allocatedquarter;"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT [emp_id],[emp_name],[emp_designation],[dept_id] FROM [employee] ORDER BY [emp_id]" UpdateCommand="UPDATE [employee] SET [emp_name]=@emp_name, [dept_id]=@dept_id, [emp_designation]=@emp_designation WHERE [emp_id]=@emp_id" DeleteCommand="DELETE FROM [employee] WHERE [emp_id]=@emp_id; DELETE FROM [allocatedquarter] WHERE [emp_id]=@emp_id;"></asp:SqlDataSource>
                 <asp:GridView ID="EmployeeInfo" runat="server" CssClass="table except table-bordered table-hover" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:BoundField DataField="emp_id" HeaderText="Employee ID" ReadOnly="True" SortExpression="emp_id" />

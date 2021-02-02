@@ -127,29 +127,22 @@ namespace FinalProject
         }
 
         //Adding a new department
-        void AddNew()
+        protected void AddNew()
         {
-            try
-            {
-                SqlConnection con4 = new SqlConnection(Strcon);
-                if (con4.State == ConnectionState.Closed)
-                {
-                    con4.Open();
-                }
-                SqlCommand cmd4 = new SqlCommand("INSERT INTO allocatedquarter (quarter_id,emp_id) values(@quarter_id,@emp_id)", con4);
-                cmd4.Parameters.AddWithValue("@emp_id", EmpID.Text.Trim());
-                cmd4.Parameters.AddWithValue("@quarter_id", QuarterID.Text.Trim());
-                cmd4.ExecuteNonQuery();
-                Response.Write("<script>alert('" + EmpName.Text.Trim() + " is allocated to " + QuarterName.Text.Trim() + " successfully.');</script>");
-                SqlCommand cmd5 = new SqlCommand("INSERT INTO rent (rent_id,rent_status,rent_amount,rent_paid_date,emp_id) values('NIL','Due',0,'',@emp_id)", con4);
-                cmd5.Parameters.AddWithValue("@emp_id", EmpID.Text.Trim());
-                cmd5.ExecuteNonQuery();
-                con4.Close();
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-            }
+            SqlConnection con4 = new SqlConnection(Strcon);
+            con4.Open();
+            SqlCommand cmd4 = new SqlCommand("INSERT INTO allocatedquarter (quarter_id,emp_id) values (@quarter_id,@emp_id);", con4);
+            cmd4.Parameters.AddWithValue("@emp_id", EmpID.Text.Trim());
+            cmd4.Parameters.AddWithValue("@quarter_id", QuarterID.Text.Trim());
+            cmd4.ExecuteNonQuery();
+            con4.Close();
+            SqlConnection con5 = new SqlConnection(Strcon);
+            con5.Open();
+            SqlCommand cmd5 = new SqlCommand("INSERT INTO rent ([emp_id],[rent_id],[rent_amount],[rent_status],[rent_paid_date]) VALUES (@emp_ids,@emp_ids,0,'Due','1997-12-07');", con5);
+            cmd5.Parameters.AddWithValue("@emp_ids", EmpID.Text.Trim());
+            cmd5.ExecuteNonQuery();
+            con5.Close();
+            Response.Write("<script>alert('" + EmpName.Text.Trim() + " is allocated to " + QuarterName.Text.Trim() + " successfully.');</script>");
         }
         //clear the form
         void ClearForm()
@@ -188,6 +181,7 @@ namespace FinalProject
                     NewQuarterID.Text = "";
                     NewQuarterName.Text = "";
                     Response.Write("<script>alert('"+NewQuarterName.Text.Trim()+" Successfully registered.');</script>");
+                    QuarterInfo.DataBind();
                 }
                 con5.Close();
             }

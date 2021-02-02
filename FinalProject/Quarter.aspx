@@ -55,7 +55,7 @@
             </div><br />
             <!--Employee list-->
             <div class="AllDataList container">
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT quarterlist.quarter_id, quarterlist.quarter_name, employee.emp_name, employee.emp_id FROM quarterlist INNER JOIN allocatedquarter ON quarterlist.quarter_id = allocatedquarter.quarter_id INNER JOIN employee ON allocatedquarter.emp_id = employee.emp_id" UpdateCommand="UPDATE [allocatedquarter] SET [quarter_id]=@quarter_id WHERE [emp_id]=@emp_id" DeleteCommand="DELETE FROM [allocatedquarter] WHERE [emp_id]=@emp_id"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeManagementConnectionString %>" SelectCommand="SELECT quarterlist.quarter_id, quarterlist.quarter_name, employee.emp_name, employee.emp_id FROM quarterlist INNER JOIN allocatedquarter ON quarterlist.quarter_id = allocatedquarter.quarter_id INNER JOIN employee ON allocatedquarter.emp_id = employee.emp_id" UpdateCommand="UPDATE [allocatedquarter] SET [quarter_id]=@quarter_id WHERE [emp_id]=@emp_id" DeleteCommand="DELETE FROM [allocatedquarter] WHERE [emp_id]=@emp_id; DELETE FROM [rent] WHERE [emp_id]=@emp_id;"></asp:SqlDataSource>
                 <asp:GridView ID="QuarterInfo" class="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False"  DataKeyNames="emp_id" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:BoundField DataField="quarter_id" HeaderText="Quarter ID" SortExpression="quarter_id" />

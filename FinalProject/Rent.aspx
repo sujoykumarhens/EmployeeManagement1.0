@@ -10,9 +10,8 @@
                 <div class="panel-heading">Pay rent</div>
                 <div class="panel-body">
                     <div class="form-inline">
-
                         <div class="form-group">
-                            <asp:TextBox ID="EmpID" class="form-control inputs" placeholder="Employee ID" runat="server" AutoPostBack="true" TextMode="SingleLine" OnTextChanged="EmpID_TextChanged"></asp:TextBox>
+                            <asp:TextBox ID="EmpID" class="form-control inputs" placeholder="Employee ID" runat="server" AutoPostBack="true" TextMode="SingleLine" OnTextChanged="EmpIDS_TextChanged"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <asp:TextBox ID="EmpName" class="form-control inputs" ReadOnly="true" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>

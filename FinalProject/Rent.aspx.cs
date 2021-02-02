@@ -20,11 +20,10 @@ namespace FinalProject
             {
                 Response.Redirect("~/");
             }
-            ClearForm();
             RentGrid.DataBind();
         }
         //checking employee details
-        protected void EmpID_TextChanged(object sender, EventArgs e)
+        protected void EmpIDS_TextChanged(object sender, EventArgs e)
         {
             if (EmpID.Text != "")
             {
@@ -46,6 +45,10 @@ namespace FinalProject
                     Response.Write("<script>alert('Sorry no employee ID found. Please try again.');</script>");
                 }
                 con.Close();
+            }
+            else if (EmpID.Text == "")
+            {
+                Response.Write("<script>alert('no data');</script>");
             }
         }
         //Saving the data
@@ -71,7 +74,7 @@ namespace FinalProject
                     da1.Fill(dt1);
                     if (dt1.Rows.Count >= 1)
                     {
-                        Response.Write("<script>alert('Employee ID exists in the list.');</script>");
+                        //Response.Write("<script>alert('Employee ID exists in the list.');</script>");
                         SqlCommand cmd2 = new SqlCommand("SELECT rent_status from rent where emp_id='" + EmpID.Text.Trim() + "';", con1);
                         SqlDataReader da2 = cmd2.ExecuteReader();
                         while (da2.Read())
@@ -83,8 +86,9 @@ namespace FinalProject
                                 DateTime Mydate = Convert.ToDateTime(Month.Text.Trim());
                                 if (CheckDateRange(Mydate))
                                 {
-                                    Response.Write("<script>alert('Payment is due...! Pay now.');</script>");
+                                    //Response.Write("<script>alert('Payment is due...! Pay now.');</script>");
                                     Dataentry();
+                                    Response.Write("<script>alert('Payment complete ! Thank You !');</script>");
                                 }
                                 else
                                 {
@@ -159,6 +163,9 @@ namespace FinalProject
             Response.Write(stringWriter.ToString());
             Response.End();
         }
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+        }
         //clear the form
         void ClearForm()
         {
@@ -167,7 +174,7 @@ namespace FinalProject
             Month.Text = "";
         }
         //checking the date range
-        private static bool CheckDateRange(DateTime Mydate)
+        protected static bool CheckDateRange(DateTime Mydate)
         {
             DateTime datePast = DateTime.Now.AddMonths(-6);
             DateTime dateFuture = DateTime.Now.AddMonths(0);

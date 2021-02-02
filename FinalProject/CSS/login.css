@@ -48,6 +48,8 @@ body {
 
 .login .submit{
     margin-top:20px;
+    background-color: #2575fc;
+    border:none;
 }
 
 /* Responsive: Portrait tablets and up */

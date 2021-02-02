@@ -114,8 +114,11 @@
     <Content Include="Image\admin.jpg" />
     <Content Include="Image\excel.svg" />
     <Content Include="Image\favicon.ico" />
+    <Content Include="Image\TGi.svg" />
     <Content Include="Quarter.aspx" />
     <Content Include="Rent.aspx" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Site.Master" />
     <Content Include="CSS\main.css" />

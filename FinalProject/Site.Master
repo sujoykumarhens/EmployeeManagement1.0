@@ -8,13 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Employee Management</title>
     <link rel="shortcut icon" href="Image/favicon.ico" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="DataTables/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="DataTables/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="CSS/main.css" rel="stylesheet" />
+    <script src="DataTables/jquery.dataTables.min.js"></script>
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    
         <script>
+            window.onload = function () { document.querySelector(".loader").style.display = "none"; }
             $(document).ready(function () {
                 $(".table").not('.except').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
             });
@@ -29,6 +31,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+<div class="loader"></div>
     <form runat="server">
         <!--Header / top navigagtion menu-->
         <header>

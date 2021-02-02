@@ -13,7 +13,7 @@
                     <asp:TextBox ID="password" runat="server" Class="password" placeholder="Password" TextMode="password"></asp:TextBox>
                     <div class="wrapper">
                         <span class="group-btn">
-                            <asp:Button ID="Submit" class="btn btn-lg btn-info btn-block submit" runat="server" Text="login" OnClick="Submit_Click" />
+                            <asp:Button ID="Submit" class="btn btn-lg btn-info btn-block submit" runat="server" Text="Login" OnClick="Submit_Click" />
                         </span>
                     </div>
                 </div>
