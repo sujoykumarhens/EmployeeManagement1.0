@@ -7,5 +7,6 @@ In this project a registered officer can manage all the details like Employee de
 4. The rent can be generated as per their allocation. And the list of the employees in the rent list can be exported to excel for future record.
 
 ## Important information
-Used software : Visual Studio 19, Microsoft SQL Server Management Studio 18.
-Language and Framework used : ASP.NET, C#, HTML, CSS, Bootstrap 3.5, jQuery, JavaScript.
+
+1. Used software : Visual Studio 19, Microsoft SQL Server Management Studio 18.
+1. Language and Framework used : ASP.NET, C#, HTML, CSS, Bootstrap 3.5, jQuery, JavaScript.
