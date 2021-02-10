@@ -24,13 +24,21 @@ namespace FinalProject
         //add a new
         protected void Save_Click(object sender, EventArgs e)
         {
-            if (CheckIfExists())
+            if(DeptID.Text == "" || DeptName.Text == ""||Phone.Text == ""||Email.Text == ""|| Vaccency.Text == "")
             {
-                Response.Write("<script>alert('Department ID already Exist. You cannot add another same ID.');</script>");
+                Response.Write("<script>alert('Plese fill all the fields');</script>");
+                ClearForm();
             }
             else
             {
-                AddNew();
+                if (CheckIfExists())
+                {
+                    Response.Write("<script>alert('Department ID already Exist. You cannot add another same ID.');</script>");
+                }
+                else
+                {
+                    AddNew();
+                }
             }
         }
 

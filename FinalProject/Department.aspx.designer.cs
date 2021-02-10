@@ -60,6 +60,24 @@ namespace FinalProject
         protected global::System.Web.UI.WebControls.TextBox Phone;
 
         /// <summary>
+        /// rfvMobNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMobNo;
+
+        /// <summary>
+        /// revMobNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revMobNo;
+
+        /// <summary>
         /// Email control.
         /// </summary>
         /// <remarks>
@@ -69,6 +87,24 @@ namespace FinalProject
         protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
+        /// remail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator remail;
+
+        /// <summary>
         /// Vaccency control.
         /// </summary>
         /// <remarks>
@@ -76,6 +112,15 @@ namespace FinalProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Vaccency;
+
+        /// <summary>
+        /// x control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator x;
 
         /// <summary>
         /// Save control.

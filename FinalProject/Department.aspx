@@ -21,19 +21,24 @@
                         <div class="modal-body">
                             <asp:Panel ID="Panl1" runat="server" align="center">
                                 <div class="form-group">
-                                    <asp:TextBox ID="DeptID" class="form-control inputs" placeholder="Department ID" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                    <asp:TextBox ID="DeptID" class="form-control inputs" Required="True" placeholder="Department ID" runat="server" TextMode="SingleLine"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="DeptName" class="form-control inputs" placeholder="Department Name" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                    <asp:TextBox ID="DeptName" class="form-control inputs" Required="True" placeholder="Department Name" runat="server" TextMode="SingleLine"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="Phone" class="form-control inputs" placeholder="Phone number" runat="server" TextMode="Phone"></asp:TextBox>
+                                    <asp:TextBox ID="Phone" class="form-control inputs" Required="True" placeholder="Phone number" runat="server" TextMode="Phone"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvMobNo" runat="server" ErrorMessage="Required" oreColor="Red" ControlToValidate="Phone" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="revMobNo" runat="server" ErrorMessage="Invalid Mobile Number."  ValidationExpression="^([0-9]{10})$" Display="Dynamic" ControlToValidate="Phone" ForeColor="Red" ></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="Email" class="form-control inputs" placeholder="Email ID" runat="server" TextMode="Email"></asp:TextBox>
+                                    <asp:TextBox ID="Email" class="form-control inputs" Required="True" placeholder="Email ID" runat="server" TextMode="Email"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required" ForeColor="Red" ControlToValidate="Email" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="remail" runat="server" ControlToValidate="Email" ErrorMessage="Enter a proper email" ForeColor="Red" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="Vaccency" class="form-control inputs" placeholder="Vaccency"  runat="server" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox ID="Vaccency" class="form-control inputs" Required="True" placeholder="Vaccency" min="1" max="50" runat="server" TextMode="Number"></asp:TextBox>
+                                    <asp:RangeValidator ID="x" runat="server" ControlToValidate="Vaccency" ErrorMessage="Vaccency should be greater than 1" Display="Dynamic" ForeColor="Red" MaximumValue="50"  MinimumValue="1" Type="Integer"></asp:RangeValidator>
                                 </div>
                                 <hr />
                                 <asp:Button ID="Save" Enabled="true" class="btn btn-info btn-block" runat="server" Text="Submit" OnClick="Save_Click" />
