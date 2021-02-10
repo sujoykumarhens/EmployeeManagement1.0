@@ -36,7 +36,7 @@
                                     <asp:TextBox ID="Vaccency" class="form-control inputs" placeholder="Vaccency"  runat="server" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <hr />
-                                <asp:Button ID="Save" class="btn btn-info btn-block" runat="server" Text="Submit" OnClick="Save_Click" />
+                                <asp:Button ID="Save" Enabled="true" class="btn btn-info btn-block" runat="server" Text="Submit" OnClick="Save_Click" />
                             </asp:Panel>
                         </div>
                     </div>

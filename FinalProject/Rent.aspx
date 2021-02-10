@@ -11,7 +11,7 @@
                 <div class="panel-body">
                     <div class="form-inline">
                         <div class="form-group">
-                            <asp:TextBox ID="EmpID" class="form-control inputs" placeholder="Employee ID" runat="server" AutoPostBack="true" TextMode="SingleLine" OnTextChanged="EmpIDS_TextChanged"></asp:TextBox>
+                            <asp:DropDownList ID="EmpID" CssClass="options" DataTextField="emp_id" AutoPostBack="true" DataValueField="emp_id" runat="server" OnSelectedIndexChanged="EmpIDS_TextChanged"></asp:DropDownList>
                         </div>
                         <div class="form-group">
                             <asp:TextBox ID="EmpName" class="form-control inputs" ReadOnly="true" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>
@@ -22,14 +22,9 @@
                         <div class="form-group">
                             <asp:TextBox ID="Month" class="form-control inputs" placeholder="Rent month" runat="server" TextMode="Date"></asp:TextBox>
                         </div>
-                        <div class="form-group">
-                            <asp:DropDownList ID="RentStatus" CssClass="options" runat="server">
-                                <asp:ListItem Value="">Payment status</asp:ListItem>
-                                <asp:ListItem>Due</asp:ListItem>
-                                <asp:ListItem>Paid</asp:ListItem>
-                            </asp:DropDownList>
-                        </div><br /><br />
-                        <asp:Button ID="Submit" class="btn btn-primary btn-block boton" runat="server" OnClick="Submit_Click" Text="Submit" />
+                        <div class="form-group pull-right">
+                            <asp:Button ID="Submit" class="btn btn-primary boton" runat="server" OnClick="Submit_Click" Text="Pay now ⮞" />
+                        </div>
                     </div>
                 </div>
             </div><br />

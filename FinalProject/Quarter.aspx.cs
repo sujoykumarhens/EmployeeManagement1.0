@@ -19,7 +19,21 @@ namespace FinalProject
             {
                 Response.Redirect("~/");
             }
-            QuarterInfo.DataBind();
+            if (!IsPostBack)
+            {
+                SqlConnection connection = new SqlConnection(Strcon);
+                connection.Open();
+                SqlCommand Command = new SqlCommand("SELECT employee.emp_id from employee LEFT JOIN allocatedquarter ON allocatedquarter.emp_id=employee.emp_id WHERE allocatedquarter.emp_id IS NULL;", connection);
+                SqlCommand Command2 = new SqlCommand("SELECT quarterlist.quarter_id from quarterlist LEFT JOIN allocatedquarter ON allocatedquarter.quarter_id=quarterlist.quarter_id WHERE allocatedquarter.quarter_id IS NULL;", connection);
+                EmpID.DataSource = Command.ExecuteReader();
+                QuarterID.DataSource = Command2.ExecuteReader();
+                EmpID.DataBind();
+                QuarterID.DataBind();
+                QuarterID.Items.Insert(0, new ListItem("Select a quarter ID", ""));
+                EmpID.Items.Insert(0, new ListItem("Select a employee ID", ""));
+                QuarterInfo.DataBind();
+                connection.Close();
+            }
         }
         //checking employee details
         protected void EmpID_TextChanged(object sender, EventArgs e)
@@ -180,8 +194,7 @@ namespace FinalProject
                     cmd6.ExecuteNonQuery();
                     NewQuarterID.Text = "";
                     NewQuarterName.Text = "";
-                    Response.Write("<script>alert('"+NewQuarterName.Text.Trim()+" Successfully registered.');</script>");
-                    QuarterInfo.DataBind();
+                    Response.Write("<script>alert('" + NewQuarterName.Text.Trim() + " Successfully registered.');window.location='Quarter.aspx';</script>");
                 }
                 con5.Close();
             }

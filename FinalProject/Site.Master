@@ -14,19 +14,18 @@
     <script src="DataTables/jquery.dataTables.min.js"></script>
     <script src="Scripts/jquery.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    
-        <script>
-            window.onload = function () { document.querySelector(".loader").style.display = "none"; }
-            $(document).ready(function () {
-                $(".table").not('.except').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+    <script>
+        window.onload = function () { document.querySelector(".loader").style.display = "none"; }
+        $(document).ready(function () {
+            $(".table").not('.except').prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+        });
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".navbar-fixed-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
             });
-            $(function () {
-                $(document).scroll(function () {
-                    var $nav = $(".navbar-fixed-top");
-                    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-                });
-            });
-        </script>
+        });
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

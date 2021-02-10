@@ -12,7 +12,7 @@
     width: 100%;
     height: 100%;
     overflow: visible;
-    background: #333 url('Image/TGi.svg') no-repeat center center;
+    background:  url('Image/TGi.svg') no-repeat center center;
 }
 
 .navbar{
@@ -44,7 +44,8 @@
     color: white;
 }
 
-.navbar ul li .nav-link:hover, .navbar-default .navbar-brand:hover {
+.navbar ul li .nav-link:hover, 
+.navbar-default .navbar-brand:hover {
     color: lightgray;
 }
 
@@ -106,6 +107,12 @@ h2 {
     box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
+.boton {
+    padding: 10px;
+    width:240px;
+    border-radius: 10px;
+}
+
 .btn-primary, .btn-info {
     background-color: rgba(0,0,0,.9);
     border: 1px solid black;
@@ -119,16 +126,16 @@ h2 {
 }
 .options {
     padding: 10px;
+    cursor:pointer;
     border-radius: 10px;
-    width: 200px;
     background-color: whitesmoke;
 }
 
+
 .table .glyphicon {
     padding-left: 20px;
-    padding-right:5px;
+    padding-right: 5px;
     color: #6a11cb;
-
 }
 .table th{
     background-color: #6a11cb;
@@ -172,6 +179,7 @@ h2 {
     }
 }
 /******************** Department page end ********************/
+
 /******************** quarter page start ********************/
 .panel {
     background-color: rgba(0,0,0,.5);
@@ -185,11 +193,6 @@ h2 {
     border-bottom: 1px solid gray;
 }
 
-.boton {
-    padding: 10px;
-    width: 170px;
-    border-radius: 10px;
-}
 /******************** quarter page end ********************/
 
 
@@ -201,8 +204,8 @@ h2 {
     .table, .table .glyphicon {
         font-size: 1vw;
     }
-    .options{
-        width:100%;
+    .options, .form-group .inputs {
+        width: 100%;
     }
 }
 

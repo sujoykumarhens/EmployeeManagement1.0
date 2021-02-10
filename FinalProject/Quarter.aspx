@@ -36,19 +36,19 @@
                     <div class="form-inline">
 
                         <div class="form-group">
-                            <asp:TextBox ID="EmpID" class="form-control inputs" placeholder="Employee ID" runat="server" TextMode="SingleLine" AutoPostBack="True" OnTextChanged="EmpID_TextChanged"></asp:TextBox>
+                            <asp:DropDownList ID="EmpID" CssClass="options" DataTextField="emp_id" AutoPostBack="True" DataValueField="emp_id" runat="server" OnSelectedIndexChanged="EmpID_TextChanged"></asp:DropDownList>
                         </div>
                         <div class="form-group">
                             <asp:TextBox ID="EmpName" class="form-control inputs" ReadOnly="true" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="QuarterID" class="form-control inputs" placeholder="Quarter ID" runat="server"  AutoPostBack="True" OnTextChanged="QuarterID_TextChanged" TextMode="SingleLine"></asp:TextBox>
+                            <asp:DropDownList ID="QuarterID" CssClass="options" DataTextField="quarter_id" AutoPostBack="True" DataValueField="quarter_id" runat="server" OnSelectedIndexChanged="QuarterID_TextChanged"></asp:DropDownList>
                         </div>
                         <div class="form-group ">
                             <asp:TextBox ID="QuarterName" ReadOnly="true" class="form-control inputs" placeholder="Quarter name" runat="server" TextMode="SingleLine"></asp:TextBox>
                         </div>
-                        <div class="form-group">
-                            <asp:Button ID="Submit" class="btn btn-primary boton" runat="server" Text="Submit" OnClick="Submit2_Click" />
+                        <div class="form-group pull-right">
+                            <asp:Button ID="Submit" class="btn btn-primary boton" runat="server" Text="Allocate ⮞" OnClick="Submit2_Click" />
                         </div>
                     </div>
                 </div>

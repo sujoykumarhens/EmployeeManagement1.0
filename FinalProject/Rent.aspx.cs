@@ -13,14 +13,22 @@ namespace FinalProject
     public partial class Rent : System.Web.UI.Page
     {
         readonly string Strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        protected void Page_Load(object sender, EventArgs e) {
             //This is to redirect the page if the user is not logged in
             if (string.IsNullOrEmpty((string)Session["role"]))
             {
                 Response.Redirect("~/");
             }
-            RentGrid.DataBind();
+            if (!IsPostBack){
+                SqlConnection connection = new SqlConnection(Strcon);
+                connection.Open();
+                SqlCommand Command = new SqlCommand("SELECT allocatedquarter.emp_id from allocatedquarter INNER JOIN rent ON allocatedquarter.emp_id=rent.emp_id WHERE rent.rent_status='Due'", connection);
+                EmpID.DataSource = Command.ExecuteReader();
+                EmpID.DataBind();
+                EmpID.Items.Insert(0, new ListItem("Select a employee ID", ""));
+                RentGrid.DataBind();
+                connection.Close();
+            }
         }
         //checking employee details
         protected void EmpIDS_TextChanged(object sender, EventArgs e)
@@ -48,7 +56,7 @@ namespace FinalProject
             }
             else if (EmpID.Text == "")
             {
-                Response.Write("<script>alert('no data');</script>");
+                Response.Write("<script>alert('Please select one of the employee ID');</script>");
             }
         }
         //Saving the data
@@ -56,7 +64,7 @@ namespace FinalProject
         {
             try
             {
-                if (EmpName.Text == "" || RentAmount.Text == "" || RentStatus.Text == "" || Month.Text == "")
+                if (EmpName.Text == "" || RentAmount.Text == "" || Month.Text == "")
                 {
                     Response.Write("<script>alert('Please enter all of the details.');</script>");
                     ClearForm();
@@ -88,7 +96,7 @@ namespace FinalProject
                                 {
                                     //Response.Write("<script>alert('Payment is due...! Pay now.');</script>");
                                     Dataentry();
-                                    Response.Write("<script>alert('Payment complete ! Thank You !');</script>");
+                                    Response.Write("<script>alert('Payment complete ! Thank You !');window.location='Rent.aspx';</script>");
                                 }
                                 else
                                 {
@@ -128,10 +136,9 @@ namespace FinalProject
         {
             SqlConnection con2 = new SqlConnection(Strcon);
             con2.Open();
-            SqlCommand cmd2 = new SqlCommand("Update rent set rent_amount = @rent_amount, rent_status=@rent_status, rent_paid_date=@rent_paid_date where emp_id = @emp_id ; ", con2);
+            SqlCommand cmd2 = new SqlCommand("Update rent set rent_amount = @rent_amount, rent_status='Paid', rent_paid_date=@rent_paid_date where emp_id = @emp_id ; ", con2);
             cmd2.Parameters.AddWithValue("@emp_id", EmpID.Text.Trim());
             cmd2.Parameters.AddWithValue("@rent_amount", RentAmount.Text.Trim());
-            cmd2.Parameters.AddWithValue("@rent_status", RentStatus.Text.Trim());
             cmd2.Parameters.AddWithValue("@rent_paid_date", Month.Text.Trim());
             cmd2.ExecuteNonQuery();
             RentGrid.DataBind();

@@ -21,7 +21,7 @@ namespace FinalProject
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EmpID;
+        protected global::System.Web.UI.WebControls.DropDownList EmpID;
 
         /// <summary>
         /// EmpName control.
@@ -49,15 +49,6 @@ namespace FinalProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Month;
-
-        /// <summary>
-        /// RentStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList RentStatus;
 
         /// <summary>
         /// Submit control.
