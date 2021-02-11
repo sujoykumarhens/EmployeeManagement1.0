@@ -171,32 +171,40 @@ namespace FinalProject
         {
             try
             {
-                SqlConnection con5 = new SqlConnection(Strcon);
-                if (con5.State == ConnectionState.Closed)
+                if (NewQuarterID.Text == "" || NewQuarterName.Text == "")
                 {
-                    con5.Open();
-                }
-                SqlCommand cmd5 = new SqlCommand("SELECT * from quarterlist where quarter_id='" + NewQuarterID.Text.Trim() + "' OR quarter_name='" + NewQuarterName.Text.Trim() + "';", con5);
-                SqlDataAdapter da5 = new SqlDataAdapter(cmd5);
-                DataTable dt5 = new DataTable();
-                da5.Fill(dt5);
-                if (dt5.Rows.Count >= 1)
-                {
-                    Response.Write("<script>alert('Quarter exixts. Try another.');</script>");
-                    NewQuarterID.Text = "";
-                    NewQuarterName.Text = "";
+                    Response.Write("<script>alert('Plese fill all the fields');</script>");
+                    ClearForm();
                 }
                 else
                 {
-                    SqlCommand cmd6 = new SqlCommand("INSERT INTO quarterlist (quarter_id,quarter_name) values (@quarter_id,@quarter_name)", con5);
-                    cmd6.Parameters.AddWithValue("@quarter_id", NewQuarterID.Text.Trim());
-                    cmd6.Parameters.AddWithValue("@quarter_name", NewQuarterName.Text.Trim());
-                    cmd6.ExecuteNonQuery();
-                    NewQuarterID.Text = "";
-                    NewQuarterName.Text = "";
-                    Response.Write("<script>alert('" + NewQuarterName.Text.Trim() + " Successfully registered.');window.location='Quarter.aspx';</script>");
+                    SqlConnection con5 = new SqlConnection(Strcon);
+                    if (con5.State == ConnectionState.Closed)
+                    {
+                        con5.Open();
+                    }
+                    SqlCommand cmd5 = new SqlCommand("SELECT * from quarterlist where quarter_id='" + NewQuarterID.Text.Trim() + "' OR quarter_name='" + NewQuarterName.Text.Trim() + "';", con5);
+                    SqlDataAdapter da5 = new SqlDataAdapter(cmd5);
+                    DataTable dt5 = new DataTable();
+                    da5.Fill(dt5);
+                    if (dt5.Rows.Count >= 1)
+                    {
+                        Response.Write("<script>alert('Quarter exixts. Try another.');</script>");
+                        NewQuarterID.Text = "";
+                        NewQuarterName.Text = "";
+                    }
+                    else
+                    {
+                        SqlCommand cmd6 = new SqlCommand("INSERT INTO quarterlist (quarter_id,quarter_name) values (@quarter_id,@quarter_name)", con5);
+                        cmd6.Parameters.AddWithValue("@quarter_id", NewQuarterID.Text.Trim());
+                        cmd6.Parameters.AddWithValue("@quarter_name", NewQuarterName.Text.Trim());
+                        cmd6.ExecuteNonQuery();
+                        NewQuarterID.Text = "";
+                        NewQuarterName.Text = "";
+                        Response.Write("<script>alert('" + NewQuarterName.Text.Trim() + " Successfully registered.');window.location='Quarter.aspx';</script>");
+                    }
+                    con5.Close();
                 }
-                con5.Close();
             }
             catch (Exception ex)
             {

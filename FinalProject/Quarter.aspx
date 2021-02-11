@@ -22,7 +22,7 @@
                                     <asp:TextBox ID="NewQuarterID" class="form-control inputs" placeholder="Quarter ID" runat="server" TextMode="SingleLine"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="NewQuarterName" class="form-control inputs" placeholder="Quarter Name" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                    <asp:TextBox ID="NewQuarterName" class="form-control inputs"  placeholder="Quarter Name" runat="server" TextMode="SingleLine"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Button ID="QuarterSave" class="btn btn-info btn-block" runat="server" Text="Submit" OnClick="QuarterSave_Clicked" />

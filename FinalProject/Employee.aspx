@@ -51,12 +51,17 @@
                     </div>
                      <div class="form-group">
                         <asp:TextBox ID="EmpID" class="form-control inputs" placeholder="Employee ID" runat="server" TextMode="SingleLine"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Required" ForeColor="Red" ControlToValidate="EmpID" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
                     <div class="form-group">
                         <asp:TextBox ID="EmpName" class="form-control inputs" placeholder="Employee name" runat="server" TextMode="SingleLine"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required" ForeColor="Red" ControlToValidate="EmpName" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Invalid Employee Name"  ValidationExpression="^[a-zA-Z\s]+$" Display="Dynamic" ControlToValidate="EmpName" ForeColor="Red" ></asp:RegularExpressionValidator>
                     </div>
                     <div class="form-group">
                         <asp:TextBox ID="Designation" class="form-control inputs" placeholder="Designation" runat="server" TextMode="SingleLine"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Required" ForeColor="Red" ControlToValidate="Designation" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid Designation"  ValidationExpression="^[a-zA-Z\s]+$" Display="Dynamic" ControlToValidate="Designation" ForeColor="Red" ></asp:RegularExpressionValidator>
                     </div>
                     
                     <asp:Button ID="Submit" class="btn btn-info btn-block" runat="server" Text="Submit" OnClick="Submit_Click"/>

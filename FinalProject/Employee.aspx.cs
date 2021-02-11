@@ -43,13 +43,21 @@ namespace FinalProject
         }
         protected void Submit_Click(object sender, EventArgs e)
         {
-            if (CheckIfExists())
+            if (EmpID.Text == "" || EmpName.Text == "" || Designation.Text == "" )
             {
-                Response.Write("<script>alert('Employee ID already Exist. You cannot add another same ID.');</script>");
+                Response.Write("<script>alert('Plese fill all the fields');</script>");
+                ClearForm();
             }
             else
             {
-                AddNew();
+                if (CheckIfExists())
+                {
+                    Response.Write("<script>alert('Employee ID already Exist. You cannot add another same ID.');</script>");
+                }
+                else
+                {
+                    AddNew();
+                }
             }
         }
         protected void Cancel_Click(object sender, EventArgs e)

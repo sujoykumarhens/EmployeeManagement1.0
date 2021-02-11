@@ -22,13 +22,16 @@
                             <asp:Panel ID="Panl1" runat="server" align="center">
                                 <div class="form-group">
                                     <asp:TextBox ID="DeptID" class="form-control inputs" Required="True" placeholder="Department ID" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Required" ForeColor="Red" ControlToValidate="DeptID" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox ID="DeptName" class="form-control inputs" Required="True" placeholder="Department Name" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                    <asp:TextBox ID="DeptName" class="form-control inputs" Required="True" placeholder="Department Name" runat="server" TextMode="SingleLine"></asp:TextBox>                                    
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Required" ForeColor="Red" ControlToValidate="DeptName" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid Department Name"  ValidationExpression="^[a-zA-Z\s]+$" Display="Dynamic" ControlToValidate="DeptName" ForeColor="Red" ></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="Phone" class="form-control inputs" Required="True" placeholder="Phone number" runat="server" TextMode="Phone"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rfvMobNo" runat="server" ErrorMessage="Required" oreColor="Red" ControlToValidate="Phone" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="rfvMobNo" runat="server" ErrorMessage="Required" oreColor="Red" ControlToValidate="Phone" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="revMobNo" runat="server" ErrorMessage="Invalid Mobile Number."  ValidationExpression="^([0-9]{10})$" Display="Dynamic" ControlToValidate="Phone" ForeColor="Red" ></asp:RegularExpressionValidator>
                                 </div>
                                 <div class="form-group">
@@ -38,6 +41,7 @@
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox ID="Vaccency" class="form-control inputs" Required="True" placeholder="Vaccency" min="1" max="50" runat="server" TextMode="Number"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Required" ForeColor="Red" ControlToValidate="Vaccency" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <asp:RangeValidator ID="x" runat="server" ControlToValidate="Vaccency" ErrorMessage="Vaccency should be greater than 1" Display="Dynamic" ForeColor="Red" MaximumValue="50"  MinimumValue="1" Type="Integer"></asp:RangeValidator>
                                 </div>
                                 <hr />
